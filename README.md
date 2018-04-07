@@ -1,7 +1,7 @@
 ember-runloop-helpers
 ==============================================================================
 
-[Short description of the addon.]
+An add-on that provides runloop related helpers.
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,15 +14,28 @@ ember install ember-runloop-helpers
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+There are two helpers with the same usage: `runloop/debounce`, `runloop/throttle`
 
+``` hbs
+<input oninput={{action (runloop/debounce (action (mut foo)) 1000) value='target.value'}}>
+<div>{{foo}}</div>
+```
+
+This will debounce `(action (mut foo))` with a wait of 1000 miliseconds. If an element is destroyed while waiting for execution, it will automatically cancel the timer.
+
+### Reference
+
+```
+{{runloop/debounce <method> <wait>    [...args] [immediate=false]}}
+{{runloop/throttle <method> <spacing> [...args] [immediate=false]}}
+```
 
 Contributing
 ------------------------------------------------------------------------------
 
 ### Installation
 
-* `git clone <repository-url>`
+* `git clone https://github.com/ember-sapporo/ember-runloop-helpers.git`
 * `cd ember-runloop-helpers`
 * `yarn install`
 
