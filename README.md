@@ -26,8 +26,8 @@ This will debounce `(action (mut foo))` with a wait of 1000 miliseconds. If an e
 ### Reference
 
 ```
-{{runloop/debounce <method> <wait>    [...args] [immediate=false]}}
-{{runloop/throttle <method> <spacing> [...args] [immediate=false]}}
+{{runloop/debounce <method> <wait>    [...args] [immediate=<boolean>]}}
+{{runloop/throttle <method> <spacing> [...args] [immediate=<boolean>]}}
 ```
 
 Contributing
